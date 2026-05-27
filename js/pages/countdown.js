@@ -2,15 +2,15 @@
 // 倒數計時（8月9日）+ 鎖定
 // ============================================================
 
-// 測試開關：true = 現在就解鎖 / false = 等到 2026/8/8 21:00
-const isTestMode = true;
+// 測試開關：true = 現在就解鎖 / false = 等到 2026/8/8 23:59
+const isTestMode = false;
 
 function updateCountdown() {
     const now = new Date(); 
     const currentYear = now.getFullYear();
 
     // 🔐 鎖屏：2026年8月8日 21:00
-    const unlockDate = new Date(2026, 7, 8, 21, 0, 0);
+    const unlockDate = new Date(2026, 7, 8, 23, 59, 0);
     const lockScreen = document.getElementById('lockScreen');
 
     // 如果鎖屏元素存在且測試模式關閉 + 時間未到 → 顯示鎖屏
